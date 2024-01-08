@@ -1,5 +1,7 @@
 # zsfer's unity style guide
 
+*disclaimer: these are just my own opinions and i will start using these conventions from now on!*
+
 ## General rules
 
 - I like using [Guard Clauses](https://deviq.com/design-patterns/guard-clause).
