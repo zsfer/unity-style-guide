@@ -1,5 +1,16 @@
 # zsfer's unity style guide
 
+## General rules
+
+- I like using [Guard Clauses](https://deviq.com/design-patterns/guard-clause).
+- Must follow SOLID principles if applicable.
+  - S = Single responsibility, scripts/behaviour should do one thing and one thing only!!
+    - `PlayerMovement.cs` should handle player movement only, no shooting, no funny business`
+- Use getters and setters for public variables to protect ur values!!
+  - `public float Health { get; private set; }` so that only ur script can modify health value
+- Generics are fun if used correctly
+- Do not over abstract, keep it simple yet organized
+
 ## File structure
 
 ```
