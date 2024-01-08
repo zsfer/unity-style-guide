@@ -90,3 +90,40 @@ public class PlayerMovement : MonoBehaviour
     }
 }
 ```
+
+**FOLLOW THESE!!**
+| thing | prefix or something | bad ❌ | good ✔️ |
+|-----|--|--|--|
+| bool | Is_ | bool Dead; | bool IsDead; |
+| events | On_ | GameOverEvent GameOver; | GameOverEvent OnGameOver; |
+
+## Code comments
+
+public functions should have a short descriptive summary so we dont get confused.
+
+```c#
+/// <summary>
+/// Damages the entity
+/// </summary>
+public void Damage(int damage) 
+```
+
+for [non-descriptive/summary/complaint/rant comments[(https://www.youtube.com/watch?v=QZ6rLbu4LQw)], please author it so we know who's complaining :3
+```c#
+if (brain.GetBool("Feeding"))
+{
+  PickedUp = col.gameObject;
+  // (zsfer): why do this? why not. fuck you
+  brain = PickedUp.GetComponent<MouseDeerBehaviour>().Brain; 
+}
+
+```
+
+## Git commit messages
+
+We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for all of our commit messages.
+```
+feat(Core): enemy spawn by waves now!
+fix(Player): faster movement speed
+```
+
