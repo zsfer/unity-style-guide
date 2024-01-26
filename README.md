@@ -38,6 +38,7 @@ Root
 | Textures | TEX_ | | TEX_Barrel_D.png |
 | Diffuse/Albedo | TEX_ | _D | TEX_Barrel_D.png |
 | Normal map | TEX_ | _NOR | TEX_Barrel_NOR.png |
+| Scenes | SCN_ | | SCN_Master |
 
 ## Scene Structure
 
@@ -118,6 +119,26 @@ if (brain.GetBool("Feeding"))
 }
 
 ```
+
+## Collaboration
+
+We will follow **trunk based development**:
+
+- Each developer/designer will have their own **sandbox** scene (EX: SCN_John_Sandbox).
+- Each developer will push their changes to their own git branch
+
+### Branch structure
+
+Each developer will work on their own branch based off the master branch, and will push to their own branch. 
+After pushing, the developer must submit a pull request to merge their changes with the master branch.
+The lead developer will then review the pull request and check if its fine, then allow merge with master branch.
+
+```
+master (production/master branch)
+   > john (feature branch)
+   > eric (feature branch)
+```
+
 
 ## Git commit messages
 
