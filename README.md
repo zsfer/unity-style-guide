@@ -177,3 +177,7 @@ feat(Core): enemy spawn by waves now!
 fix(Player): faster movement speed
 ```
 
+To **link and close GitHub issues**, we put it inside the commit message
+```
+fix #13(Player): removed bunny hopping
+```
