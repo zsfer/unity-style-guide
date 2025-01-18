@@ -32,7 +32,7 @@ Root
 | File Type | Prefix | Suffix | Example | 
 ------------|--------|---------|-------|
 | Behaviour Scripts |  | | PlayerController.cs |
-| ScriptableObject scripts | | _Data | WeaponData.cs |
+| ScriptableObject scripts | | Data | WeaponData.cs |
 | (3d) Static mesh (props) | SM_ | | SM_ExplodingBarrel.fbx |
 | (2d) Sprite/spritesheets | SPR_ | | SPR_PlayerBob.png |
 | Textures | TEX_ | | TEX_Barrel_D.png |
@@ -90,6 +90,34 @@ public class PlayerMovement : MonoBehaviour
         _rb.velocity = _inputVec * _moveSpeed;
     }
 }
+```
+### Abstraction
+
+As much as possible, use abstraction to its maximum.
+
+**Use `private` if only that script will use it.**
+
+```c#
+// Only this specific script needs access to this Rigidbody variable
+private Rigidbody _rb;
+```
+- Use the `[SerializeField]` header if you want to expose the variable in the inspector
+
+```c#
+// I only want this script to access this but I also want to edit it in the inspector
+[SerializeField]
+private Rigidbody _rb;
+```
+
+**Use `public` WITH GETTERS AND SETTERS**
+
+```c#
+// Other scripts can access this but not modify it
+public float MoveSpeed { get; private set; }
+
+// If i want to expose it in the editor, i use the [field: SerializeField] header
+[field: SerializeField]
+public float MoveSpeed { get; private set; }
 ```
 
 **FOLLOW THESE!!**
