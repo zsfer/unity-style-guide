@@ -127,6 +127,40 @@ public float MoveSpeed { get; private set; }
 | bool | Is_ | bool Dead; | bool IsDead; |
 | events | On_ | GameOverEvent GameOver; | GameOverEvent OnGameOver; |
 
+### Guard clauses
+
+A simple check that exits the function/condition immediately. Do this instead of nesting a billion If and Else statements.
+```c#
+
+// Instead of doing this
+void Update()
+{
+  if (!_isSlowed || !_isDead)
+  {
+    // gameplay code
+
+    if (...)
+    {
+      // more gameplay code
+    }
+  }
+}
+
+// DO THIS!!
+void Update()
+{
+  if (_isSlowed || _isDead)
+    return;
+
+  // gameplay code
+  if (...)
+  {
+    // more gameplay code
+  }
+}
+
+```
+
 ## Code comments
 
 public functions should have a short descriptive summary so we dont get confused.
