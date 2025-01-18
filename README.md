@@ -11,7 +11,7 @@
 - Use getters and setters for public variables to protect ur values!!
   - `public float Health { get; private set; }` so that only ur script can modify health value
 - Generics are fun if used correctly
-- Do not over abstract, keep it simple yet organized
+- Do not overcomplicate the gameplay code, keep it simple yet organized
 
 ## File structure
 
