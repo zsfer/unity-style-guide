@@ -101,7 +101,8 @@ As much as possible, use abstraction to its maximum.
 // Only this specific script needs access to this Rigidbody variable
 private Rigidbody _rb;
 ```
-- Use the `[SerializeField]` header if you want to expose the variable in the inspector
+
+Use the `[SerializeField]` header if you want to expose the variable in the inspector
 
 ```c#
 // I only want this script to access this but I also want to edit it in the inspector
