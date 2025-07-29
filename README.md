@@ -235,9 +235,6 @@ All of the game lives inside the `master` branch, but this comes with some rules
 2. All changes should be reviewed by the technical lead. If you're not sure about the change, you can ask for a review by branching off and submitting a pull request. 
 3. Code reviews will be frequent and all developers must comply/fix any changes immediately to ensure code quality
 
-```
-
-
 ## Git commit messages
 
 We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for all of our commit messages.
