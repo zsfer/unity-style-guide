@@ -229,6 +229,7 @@ Actual game scenes will live inside the Scenes folder, but each developer/design
 ### Code 
 
 All of the game lives inside the `master` branch, but this comes with some rules:
+
 *reasoning: i dont want to deal with merge conflicts anymore, i trust my team members to be smart enough when it comes to game programming*
 
 1. **DO NOT PUSH BROKEN COMMITS!** if the current build in-editor does not work, do not push it to master.
