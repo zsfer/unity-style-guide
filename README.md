@@ -9,11 +9,28 @@
   - S = Single responsibility, scripts/behaviour should do one thing and one thing only!!
     - `PlayerMovement.cs` should handle player movement only, no shooting, no funny business`
 - Use getters and setters for public variables to protect ur values!!
-  - `public float Health { get; private set; }` so that only ur script can modify health value
+  - `public float Health { get; private set; }` so that only any reference to this property can modify the health value
 - Generics are fun if used correctly
 - Do not overcomplicate the gameplay code, keep it simple yet organized
 
-## File structure
+## File structure (Feature based)
+
+```
+Root
+	> Assets/
+		> _Features/
+			> FeatureName/
+				> Art/	
+					> 2D/3D/
+					> Audio/
+					> Shaders/	
+				> Scripts/
+				> Prefabs/
+				> Data/      <- this contains ScriptableObject data
+	> Builds/ 	         <- this will be part of the .gitignore, builds are big and should be indivdually sourced.
+```
+
+## File structure (Standard)
 
 ```
 Root
@@ -42,6 +59,8 @@ Root
 
 ## Scene Structure
 
+this applies for both Multi-scene and Single-scene
+
 ```
 @Game
 @UI
@@ -52,6 +71,8 @@ _Gameplay
 ```
 
 put `@` for all GameObjects that are containers for scripts (`@Game` can also be `@GameManager`)
+
+put `_` for "folders"
 `_Gameplay` contains all dynamic/playable/interactable objects
 
 ## Coding conventions
@@ -91,15 +112,16 @@ public class PlayerMovement : MonoBehaviour
     }
 }
 ```
+
 ### Abstraction
 
 As much as possible, use abstraction to its maximum.
 
-**Use `private` if only that script will use it.**
+**Everything should be `private` until we dont need them to be**
 
 ```c#
 // Only this specific script needs access to this Rigidbody variable
-private Rigidbody _rb;
+Rigidbody _rb;
 ```
 
 Use the `[SerializeField]` header if you want to expose the variable in the inspector
@@ -107,7 +129,7 @@ Use the `[SerializeField]` header if you want to expose the variable in the insp
 ```c#
 // I only want this script to access this but I also want to edit it in the inspector
 [SerializeField]
-private Rigidbody _rb;
+Rigidbody _rb;
 ```
 
 **Use `public` WITH GETTERS AND SETTERS**
@@ -126,6 +148,7 @@ public float MoveSpeed { get; private set; }
 |-----|--|--|--|
 | bool | Is_ | bool Dead; | bool IsDead; |
 | events | On_ | GameOverEvent GameOver; | GameOverEvent OnGameOver; |
+| handlers | Handle_ | void OnGameOver() | void HandleOnGameOver() |
 
 ### Guard clauses
 
@@ -159,6 +182,19 @@ void Update()
   }
 }
 
+// But this is fine too
+
+void Update()
+{
+	if (_isSlowed || _isDead)
+	{
+		// do something when slowed or dead
+		return;	
+	}
+
+	// ...gameplay code
+}
+
 ```
 
 ## Code comments
@@ -169,6 +205,7 @@ public functions should have a short descriptive summary so we dont get confused
 /// <summary>
 /// Damages the entity
 /// </summary>
+/// <param name="damage">HP to reduce from entity health</damage>
 public void Damage(int damage) 
 ```
 
@@ -177,7 +214,7 @@ for [non-descriptive/summary/complaint/rant comments](https://www.youtube.com/wa
 if (brain.GetBool("Feeding"))
 {
   PickedUp = col.gameObject;
-  // (zsfer): why do this? why not. fuck you
+  // (jsa): why do this? why not. fuck you
   brain = PickedUp.GetComponent<MouseDeerBehaviour>().Brain; 
 }
 
@@ -205,11 +242,11 @@ All of the game lives inside the `master` branch, but this comes with some rules
 
 We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for all of our commit messages.
 ```
-feat(Core): enemy spawn by waves now!
-fix(Player): faster movement speed
+feat(core): enemy spawn by waves now!
+fix(player): faster movement speed
 ```
 
 To **link and close GitHub issues**, we put it inside the commit message
 ```
-fix #13(Player): removed bunny hopping
+fix #13(player): removed bunny hopping
 ```
