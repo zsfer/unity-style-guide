@@ -48,7 +48,7 @@ Root
 
 | File Type | Prefix | Suffix | Example | 
 ------------|--------|---------|-------|
-| Behaviour Scripts |  | | PlayerController.cs |
+| Behaviour Scripts | [Game Feature][Feature Behaviour].cs | | PlayerController.cs |
 | ScriptableObject scripts | | Data | WeaponData.cs |
 | (3d) Static mesh (props) | SM_ | | SM_ExplodingBarrel.fbx |
 | (2d) Sprite/spritesheets | SPR_ | | SPR_PlayerBob.png |
