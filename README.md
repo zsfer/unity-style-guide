@@ -172,7 +172,7 @@ public functions should have a short descriptive summary so we dont get confused
 public void Damage(int damage) 
 ```
 
-for [non-descriptive/summary/complaint/rant comments[(https://www.youtube.com/watch?v=QZ6rLbu4LQw)], please author it so we know who's complaining :3
+for [non-descriptive/summary/complaint/rant comments](https://www.youtube.com/watch?v=QZ6rLbu4LQw), please author it so we know who's complaining :3
 ```c#
 if (brain.GetBool("Feeding"))
 {
@@ -185,21 +185,19 @@ if (brain.GetBool("Feeding"))
 
 ## Collaboration
 
-We will follow **trunk based development**:
+### In-Engine
 
-- Each developer/designer will have their own **sandbox** scene (EX: SCN_John_Sandbox).
-- Each developer will push their changes to their own git branch
+Actual game scenes will live inside the Scenes folder, but each developer/designer will have their own **sandbox** scene (ex. SCN_John_CombatTest)
 
-### Branch structure
+### Code 
 
-Each developer will work on their own branch based off the master branch, and will push to their own branch. 
-After pushing, the developer must submit a pull request to merge their changes with the master branch.
-The lead developer will then review the pull request and check if its fine, then allow merge with master branch.
+All of the game lives inside the `master` branch, but this comes with some rules:
+*reasoning: i dont want to deal with merge conflicts anymore, i trust my team members to be smart enough when it comes to game programming*
 
-```
-master (production/master branch)
-   > john (feature branch)
-   > eric (feature branch)
+1. DO NOT PUSH BROKEN COMMITS. if the current build in-editor does not work, do not push it to master.
+2. All changes should be reviewed by the technical lead. If you're not sure about the change, you can ask for a review by branching off and submitting a pull request. 
+3. Code reviews will be frequent and all developers must comply/fix any changes immediately to ensure code quality
+
 ```
 
 
