@@ -25,8 +25,8 @@ Root
           > Audio/
           > Shaders/	
         > Scripts/
-				    > Prefabs/
-				    > Data/      <- this contains ScriptableObject data
+            > Prefabs/
+            > Data/      <- this contains ScriptableObject data
   > Builds/ 	        <- this will be part of the .gitignore, builds are big and should be indivdually sourced.
 ```
 
