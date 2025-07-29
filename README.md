@@ -17,17 +17,17 @@
 
 ```
 Root
-	> Assets/
-		> _Features/
-			> FeatureName/
-				> Art/	
-					> 2D/3D/
-					> Audio/
-					> Shaders/	
-				> Scripts/
-				> Prefabs/
-				> Data/      <- this contains ScriptableObject data
-	> Builds/ 	         <- this will be part of the .gitignore, builds are big and should be indivdually sourced.
+  > Assets/
+    > _Features/
+      > FeatureName/
+        > Art/	
+          > 2D/3D/
+          > Audio/
+          > Shaders/	
+        > Scripts/
+				    > Prefabs/
+				    > Data/      <- this contains ScriptableObject data
+  > Builds/ 	        <- this will be part of the .gitignore, builds are big and should be indivdually sourced.
 ```
 
 ## File structure (Standard)
