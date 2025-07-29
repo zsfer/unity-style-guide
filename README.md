@@ -231,7 +231,7 @@ Actual game scenes will live inside the Scenes folder, but each developer/design
 All of the game lives inside the `master` branch, but this comes with some rules:
 *reasoning: i dont want to deal with merge conflicts anymore, i trust my team members to be smart enough when it comes to game programming*
 
-1. DO NOT PUSH BROKEN COMMITS. if the current build in-editor does not work, do not push it to master.
+1. **DO NOT PUSH BROKEN COMMITS!** if the current build in-editor does not work, do not push it to master.
 2. All changes should be reviewed by the technical lead. If you're not sure about the change, you can ask for a review by branching off and submitting a pull request. 
 3. Code reviews will be frequent and all developers must comply/fix any changes immediately to ensure code quality
 
