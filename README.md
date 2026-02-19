@@ -77,9 +77,11 @@ put `_` for "folders"
 
 ## Coding conventions
 
-We follow [Godot coding conventions](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_style_guide.html)!!! Microsoft and Unity conventions can suck ass
+We mainly follow [Godot coding conventions](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_style_guide.html).
 
 `PascalCase` for public variables, `_camelCase` for private variables
+
+We also use a **Padded Allman** style :)
 
 ```c#
 public class PlayerMovement : MonoBehaviour
@@ -100,10 +102,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        _inputVec = (transform.right * Input.GetAxisRaw("Horizontal") + transform.up * Input.GetAxisRaw("Vertical")).normalized;
+        _inputVec = ( transform.right * Input.GetAxisRaw( "Horizontal" ) + transform.up * Input.GetAxisRaw( "Vertical" ) ).normalized;
 
-        _anim.SetFloat("x", _inputVec.x);
-        _anim.SetFloat("y", _inputVec.y);
+        _anim.SetFloat( "x", _inputVec.x );
+        _anim.SetFloat( "y", _inputVec.y );
     }
 
     private void FixedUpdate()
