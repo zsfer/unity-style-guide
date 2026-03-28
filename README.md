@@ -56,6 +56,7 @@ Root
 | Diffuse/Albedo | TEX_ | _D | TEX_Barrel_D.png |
 | Normal map | TEX_ | _NOR | TEX_Barrel_NOR.png |
 | Scenes | SCN_ | | SCN_Master |
+| Material | MAT_ | | MAT_Ground |
 
 ## Scene Structure
 
@@ -81,7 +82,8 @@ We mainly follow [Godot coding conventions](https://docs.godotengine.org/en/stab
 
 `PascalCase` for public variables, `_camelCase` for private variables
 
-We also use a **Padded Allman** style :)
+We also use a **Padded Allman** style :) 
+*because it's easier for my brain to read the lines :D
 
 ```c#
 public class PlayerMovement : MonoBehaviour
@@ -160,11 +162,11 @@ A simple check that exits the function/condition immediately. Do this instead of
 // Instead of doing this
 void Update()
 {
-  if (!_isSlowed || !_isDead)
+  if ( !_isSlowed || !_isDead )
   {
     // gameplay code
 
-    if (...)
+    if ( ... )
     {
       // more gameplay code
     }
@@ -174,11 +176,11 @@ void Update()
 // DO THIS!!
 void Update()
 {
-  if (_isSlowed || _isDead)
+  if ( _isSlowed || _isDead )
     return;
 
   // gameplay code
-  if (...)
+  if ( ... )
   {
     // more gameplay code
   }
@@ -188,7 +190,7 @@ void Update()
 
 void Update()
 {
-	if (_isSlowed || _isDead)
+	if ( _isSlowed || _isDead )
 	{
 		// do something when slowed or dead
 		return;	
@@ -208,12 +210,12 @@ public functions should have a short descriptive summary so we dont get confused
 /// Damages the entity
 /// </summary>
 /// <param name="damage">HP to reduce from entity health</damage>
-public void Damage(int damage) 
+public void Damage( int damage ) 
 ```
 
 for [non-descriptive/summary/complaint/rant comments](https://www.youtube.com/watch?v=QZ6rLbu4LQw), please author it so we know who's complaining :3
 ```c#
-if (brain.GetBool("Feeding"))
+if ( brain.GetBool( "Feeding" ) )
 {
   PickedUp = col.gameObject;
   // (jsa): why do this? why not. fuck you
