@@ -147,6 +147,21 @@ public float MoveSpeed { get; private set; }
 public float MoveSpeed { get; private set; }
 ```
 
+I also DO NOT make getters and setters Java-style.
+
+```
+// i dont do this
+
+[SerializeField]
+float _backingField = 0;
+
+public float BackingValue => _backingField;
+
+// i prefer just using [field: SerializeField]
+[field: SerializeField]
+public float BackingValue { get; private set; }
+```
+
 **FOLLOW THESE!!**
 | thing | prefix or something | bad ❌ | good ✔️ |
 |-----|--|--|--|
